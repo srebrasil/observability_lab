@@ -1,0 +1,26 @@
+# /tmp/otel-collector-config.yaml
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4318
+      http:
+        endpoint: 0.0.0.0:4318
+exporters:
+  jaeger:
+    endpoint: jaeger:14250
+    tls:
+      insecure: true
+  logging:
+    loglevel: debug
+
+processors:
+  batch:
+    timeout: 1s
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      exporters: [jaeger, logging]
+      processors: []

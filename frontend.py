@@ -1,6 +1,11 @@
 from flask import Flask, jsonify
 import requests
 import random
+from classes.Metrics import Metrics
+
+metrics = Metrics("localhost", 8000)
+app_metrics = metrics.collect_metrics("frontend")
+
 
 app = Flask(__name__)
 

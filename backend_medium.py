@@ -5,6 +5,10 @@ from flask import Flask, jsonify
 from classes.Calc import Calc
 from random import randint
 from time import sleep
+from classes.Metrics import Metrics
+
+metrics = Metrics("localhost", 8002)
+app_metrics = metrics.collect_metrics("backend-medium")
 
 
 app = Flask(__name__) # create the Flask app

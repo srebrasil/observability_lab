@@ -3,11 +3,6 @@
 from flask import Flask, jsonify
 #expose endpoint to return the operation of class Calc
 from classes.Calc import Calc
-from classes.Metrics import Metrics
-
-metrics = Metrics("localhost", 8001)
-app_metrics = metrics.collect_metrics("backend-fast")
-
 
 app = Flask(__name__) # create the Flask app
 

@@ -16,24 +16,9 @@ scrape_configs:
     scrape_interval: 5s
 
     static_configs:
-      - targets: ['localhost:9090']
+      - targets: ['0.0.0.0:9090']
 
-  - job_name: 'frontend'
+  - job_name: applications
     scrape_interval: 5s
     static_configs:
-      - targets: [172.27.0.1:8000]
-
-  - job_name: 'backend-fast'
-    scrape_interval: 5s
-    static_configs:
-      - targets: [172.27.0.1:8001]
-
-  - job_name: 'backend-medium'
-    scrape_interval: 5s
-    static_configs:
-      - targets: [172.27.0.1:8002]
-
-  - job_name: 'backend-slow'
-    scrape_interval: 5s
-    static_configs:
-      - targets: [172.27.0.1:8003]
+      - targets: ["192.168.15.9:4000", "192.168.15.9:4001", "192.168.15.9:4002", "192.168.15.9:4003"]

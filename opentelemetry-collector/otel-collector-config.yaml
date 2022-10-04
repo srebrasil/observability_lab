@@ -15,7 +15,7 @@ receivers:
         
 exporters:
   jaeger:
-    endpoint: 172.17.0.3:14250
+    endpoint: jaeger:14250
     tls:
       insecure: true
   logging:
@@ -23,12 +23,12 @@ exporters:
   
     # Data sources: metrics
   prometheus:
-    endpoint: "172.17.0.2:8889"
+    endpoint: "otel-collector:8889"
     namespace: "default"
 
   # Data sources: metrics
   prometheusremotewrite:
-    endpoint: "http://172.17.0.2:9090/api/v1/write"
+    endpoint: "http://prometheus:9090/api/v1/write"
     # For offical Prometheus (e.g. running via Docker)
     # endpoint: 'http://prometheus:9090/api/v1/write'
     tls:

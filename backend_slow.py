@@ -5,8 +5,11 @@ from flask import Flask, jsonify
 from classes.Calc import Calc
 from random import randint
 from time import sleep
+from prometheus_flask_exporter import PrometheusMetrics
 
-app = Flask(__name__) # create the Flask app
+app = Flask(__name__)
+metrics = PrometheusMetrics(app)
+metrics.info('app_info', 'Application info', version='1.0.0', app_name='backend-slow')
 
 @app.route('/api/v1/calc/sum/<int:num1>/<int:num2>', methods=['GET']) # route to expose the api
 def get_sum(num1, num2):

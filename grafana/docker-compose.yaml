@@ -1,0 +1,21 @@
+#docker compose for grafana
+version: '3.3'
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: always
+    ports:
+      - 6000:6000
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+    networks:
+      - prometheus-net
+
+networks:
+  prometheus-net:
+    name: olly
+
+volumes:
+  grafana-data:

@@ -1,13 +1,11 @@
 from flask import Flask, jsonify
 import requests
 import random
-from classes.Metrics import Metrics
-
-metrics = Metrics("localhost", 8000)
-app_metrics = metrics.collect_metrics("frontend")
-
+from prometheus_flask_exporter import PrometheusMetrics
 
 app = Flask(__name__)
+metrics = PrometheusMetrics(app)
+metrics.info('app_info', 'Application info', version='1.0.0', app_name='frontend')
 
 operations = ['sum', 'sub', 'mult', 'div']
 ports = {'v1': 4001, 'v2': 4002, 'v3': 4003}

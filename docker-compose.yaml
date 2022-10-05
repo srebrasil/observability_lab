@@ -1,0 +1,63 @@
+version: '3.3'
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - ./docker-volumes/grafana:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    networks:
+      - grafana-net
+    depends_on:
+      - prometheus
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - ./docker-volumes/prometheus:/prometheus
+    networks:
+      - prometheus-net
+    command: --web.enable-lifecycle  --config.file=/etc/prometheus/prometheus.yaml
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    container_name: jaeger
+    environment:
+      COLLECTOR_ZIPKIN_HTTP_PORT: 9411
+      COLLECTOR_OTLP_ENABLE: True
+    ports:
+      - 6831:6831/udp
+      - 6832:6832/udp
+      - 5778:5778
+      - 16685:16685
+      - 16686:16686
+      - 14250:14250
+      - 14268:14268
+      - 14269:14269
+      - 9411:9411
+    volumes:
+      - ./docker-volumes/jaeger:/var/lib/jaeger
+    networks:
+      - jaeger-net
+    depends_on:
+      - prometheus
+
+networks:
+  grafana-net:
+    name: olly
+  prometheus-net:
+    name: olly
+  jaeger-net:
+    name: olly
+
+volumes:
+  grafana-data:
+  prometheus-data: 
+

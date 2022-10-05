@@ -1,3 +1,11 @@
 classes/__pycache__
 venv
 copilot
+.vscode
+.pytest_cache
+__pycache__
+.copilot.code.workspace
+docker-volumes/grafana/
+docker-volumes/prometheus/
+docker-volumes/jaeger/
+

@@ -47,7 +47,23 @@ services:
     networks:
       - jaeger-net
     depends_on:
-      - prometheus
+      - otel-collector
+
+  otel-collector:
+    image: otel/opentelemetry-collector:latest
+    container_name: otel-collector
+    ports:
+      - 4317:4317
+      - 1888:1888
+      - 8888:8888
+      - 8889:8889
+      - 13133:13133
+      - 55670:55670
+    networks:
+      - otel-collector-net
+    volumes:
+      - ./otel-collector:/etc/otel-collector
+    command: --config=/etc/otel-collector/config.yaml
 
 networks:
   grafana-net:
@@ -55,6 +71,8 @@ networks:
   prometheus-net:
     name: olly
   jaeger-net:
+    name: olly
+  otel-collector-net:
     name: olly
 
 volumes:

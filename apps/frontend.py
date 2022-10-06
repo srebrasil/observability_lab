@@ -8,14 +8,14 @@ metrics = PrometheusMetrics(app)
 metrics.info('app_info', 'Application info', version='1.0.0', app_name='frontend')
 
 operations = ['sum', 'sub', 'mult', 'div']
-ports = {'v1': 4001, 'v2': 4002, 'v3': 4003}
+ports = {'v1': 'http://backend_fast:4001', 'v2': 'http://backend_medim:4002', 'v3': 'http://backend_slow:4003'}
  
 
 @app.route('/api/v1/frontend', methods=['GET'])
 def get_test():
-    response = requests.get('http://localhost:'+str(random.choice(list(ports.values())))+'/api/v1/calc/'+ random.choice(operations) +'/' + str(random.randint(1, 1000)) + '/' + str(random.randint(1, 1000)))
+    response = requests.get(str(random.choice(list(ports.values())))+'/api/v1/calc/'+ random.choice(operations) +'/' + str(random.randint(1, 1000)) + '/' + str(random.randint(1, 1000)))
     if response.status_code == 200:
-        combined_response = requests.get('http://localhost:'+str(random.choice(list(ports.values())))+'/api/v1/calc/'+ random.choice(operations) +'/' + str(random.randint(1, 1000)) + '/' + str(random.randint(1, 1000)))
+        combined_response = requests.get(str(random.choice(list(ports.values())))+'/api/v1/calc/'+ random.choice(operations) +'/' + str(random.randint(1, 1000)) + '/' + str(random.randint(1, 1000)))
     return jsonify({'Result1' : response.json()['result'], 'Result2' : combined_response.json()['result']})
 
 if __name__ == '__main__':

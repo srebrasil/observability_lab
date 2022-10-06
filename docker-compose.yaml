@@ -65,6 +65,79 @@ services:
       - ./otel-collector:/etc/otel-collector
     command: --config=/etc/otel-collector/config.yaml
 
+
+  frontend:
+    image: rcsousa/olly:latest
+    container_name: frontend
+    environment:
+      OTEL_RESOURCE_ATTRIBUTES: "service.name=frontend"
+    ports:
+      - 4000:4000
+    volumes:
+      - ./apps:/apps
+    networks:
+      - apps-net
+    command: opentelemetry-instrument flask --app apps/frontend run -h '0.0.0.0' -p '4000'
+    depends_on:
+      - otel-collector
+      - grafana
+      - prometheus
+      - jaeger
+
+  backend-fast:
+    image: rcsousa/olly:latest
+    container_name: backend_fast
+    environment:
+      OTEL_RESOURCE_ATTRIBUTES: "service.name=backend-fast"
+    ports:
+      - 4001:4001
+    volumes:
+      - ./apps:/apps
+    networks:
+      - apps-net
+    command: opentelemetry-instrument flask --app apps/backend_fast run -h '0.0.0.0' -p '4001'
+    depends_on:
+      - otel-collector
+      - grafana
+      - prometheus
+      - jaeger
+
+  backend_medium:
+    image: rcsousa/olly:latest
+    container_name: backend_medium
+    environment:
+      OTEL_RESOURCE_ATTRIBUTES: "service.name=backend_medium"
+    ports:
+      - 4002:4002
+    volumes:
+      - ./apps:/apps
+    networks:
+      - apps-net
+    command: opentelemetry-instrument flask --app apps/backend_medium run -h '0.0.0.0' -p '4002'
+    depends_on:
+      - otel-collector
+      - grafana
+      - prometheus
+      - jaeger
+
+  backend_slow:
+    image: rcsousa/olly:latest
+    container_name: backend_slow
+    environment:
+      OTEL_RESOURCE_ATTRIBUTES: "service.name=backend_slow"
+    ports:
+      - 4003:4003
+    volumes:
+      - ./apps:/apps
+    networks:
+      - apps-net
+    command: opentelemetry-instrument flask --app apps/backend_slow run -h '0.0.0.0' -p '4003'
+    depends_on:
+      - otel-collector
+      - grafana
+      - prometheus
+      - jaeger
+
 networks:
   grafana-net:
     name: olly
@@ -73,6 +146,8 @@ networks:
   jaeger-net:
     name: olly
   otel-collector-net:
+    name: olly
+  apps-net:
     name: olly
 
 volumes:

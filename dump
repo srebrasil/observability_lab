@@ -1,0 +1,934 @@
+ * Serving Flask app 'apps/frontend'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:4000
+ * Running on http://172.19.0.9:4000
+Press CTRL+C to quit
+172.19.0.1 - - [06/Oct/2022 20:47:52] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:47:54.8114006+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {grpc_status:14, created_time:"2022-10-06T20:47:54.8113974+00:00"}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:47:57] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:47:59.814688637+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {created_time:"2022-10-06T20:47:59.814685711+00:00", grpc_status:14}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:48:02] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:48:04.811969698+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {grpc_status:14, created_time:"2022-10-06T20:48:04.811955502+00:00"}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:48:07] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:48:09.811436661+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {grpc_status:14, created_time:"2022-10-06T20:48:09.811428913+00:00"}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:48:12] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:48:14.8123511+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {grpc_status:14, created_time:"2022-10-06T20:48:14.8123333+00:00"}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:48:17] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:48:19.812922656+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {created_time:"2022-10-06T20:48:19.812905569+00:00", grpc_status:14}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:48:22] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:48:24.8131217+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {grpc_status:14, created_time:"2022-10-06T20:48:24.8131053+00:00"}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:48:27] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:48:29.813651707+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {grpc_status:14, created_time:"2022-10-06T20:48:29.813638286+00:00"}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:48:32] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:48:34.8140009+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {created_time:"2022-10-06T20:48:34.8139821+00:00", grpc_status:14}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:48:37] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:48:39.8144302+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {grpc_status:14, created_time:"2022-10-06T20:48:39.8144115+00:00"}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:48:42] "GET /metrics HTTP/1.1" 200 -
+[2022-10-06 20:48:44,631] ERROR in app: Exception on /api/v1/frontend [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/usr/lib/python3.10/http/client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1037, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.10/http/client.py", line 975, in send
+    self.connect()
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f8dd0b3d1b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/instrumentation/urllib3/__init__.py", line 185, in instrumented_urlopen
+    return wrapped(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=4003): Max retries exceeded with url: /api/v1/calc/div/700/102 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8dd0b3d1b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/apps/frontend.py", line 16, in get_test
+    response = requests.get('http://localhost:'+str(random.choice(list(ports.values())))+'/api/v1/calc/'+ random.choice(operations) +'/' + str(random.randint(1, 1000)) + '/' + str(random.randint(1, 1000)))
+  File "/usr/local/lib/python3.10/dist-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/instrumentation/requests/__init__.py", line 127, in instrumented_request
+    return _instrumented_requests_call(
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/instrumentation/requests/__init__.py", line 244, in _instrumented_requests_call
+    raise exception.with_traceback(exception.__traceback__)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/instrumentation/requests/__init__.py", line 208, in _instrumented_requests_call
+    result = call_wrapped()  # *** PROCEED
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/instrumentation/requests/__init__.py", line 125, in call_wrapped
+    return wrapped_request(self, method, url, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/instrumentation/requests/__init__.py", line 147, in instrumented_send
+    return _instrumented_requests_call(
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/instrumentation/requests/__init__.py", line 158, in _instrumented_requests_call
+    return call_wrapped()
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/instrumentation/requests/__init__.py", line 145, in call_wrapped
+    return wrapped_send(self, request, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/requests/adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=4003): Max retries exceeded with url: /api/v1/calc/div/700/102 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8dd0b3d1b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+172.19.0.1 - - [06/Oct/2022 20:48:44] "GET /api/v1/frontend HTTP/1.1" 500 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:48:44.814422641+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {created_time:"2022-10-06T20:48:44.814416642+00:00", grpc_status:14}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:48:47] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:48:49.8133895+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {grpc_status:14, created_time:"2022-10-06T20:48:49.8133862+00:00"}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:48:52] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:48:54.815334706+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {grpc_status:14, created_time:"2022-10-06T20:48:54.815315892+00:00"}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:48:57] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.DEADLINE_EXCEEDED encountered while exporting metrics, retrying in Nones.
+Exception while exporting metrics 'NoneType' object cannot be interpreted as an integer
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.DEADLINE_EXCEEDED
+details = "Deadline Exceeded"
+debug_error_string = "UNKNOWN:Deadline Exceeded {created_time:"2022-10-06T20:48:59.8117682+00:00", grpc_status:4}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/metrics/_internal/export/__init__.py", line 482, in _receive_metrics
+    self._exporter.export(metrics_data, timeout_millis=timeout_millis)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/metric_exporter/__init__.py", line 248, in export
+    return self._export(metrics_data)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:48:59.816201+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {created_time:"2022-10-06T20:48:59.8161441+00:00", grpc_status:14}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:49:02] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:49:04.8166854+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {created_time:"2022-10-06T20:49:04.8166667+00:00", grpc_status:14}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:49:07] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:49:09.817869181+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {grpc_status:14, created_time:"2022-10-06T20:49:09.817850985+00:00"}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:49:12] "GET /metrics HTTP/1.1" 200 -
+[2022-10-06 20:49:13,078] ERROR in app: Exception on /api/v1/frontend [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/usr/lib/python3.10/http/client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1037, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.10/http/client.py", line 975, in send
+    self.connect()
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f8dd09d9c00>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/instrumentation/urllib3/__init__.py", line 185, in instrumented_urlopen
+    return wrapped(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=4001): Max retries exceeded with url: /api/v1/calc/mult/61/25 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8dd09d9c00>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/apps/frontend.py", line 16, in get_test
+    response = requests.get('http://localhost:'+str(random.choice(list(ports.values())))+'/api/v1/calc/'+ random.choice(operations) +'/' + str(random.randint(1, 1000)) + '/' + str(random.randint(1, 1000)))
+  File "/usr/local/lib/python3.10/dist-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/instrumentation/requests/__init__.py", line 127, in instrumented_request
+    return _instrumented_requests_call(
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/instrumentation/requests/__init__.py", line 244, in _instrumented_requests_call
+    raise exception.with_traceback(exception.__traceback__)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/instrumentation/requests/__init__.py", line 208, in _instrumented_requests_call
+    result = call_wrapped()  # *** PROCEED
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/instrumentation/requests/__init__.py", line 125, in call_wrapped
+    return wrapped_request(self, method, url, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/instrumentation/requests/__init__.py", line 147, in instrumented_send
+    return _instrumented_requests_call(
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/instrumentation/requests/__init__.py", line 158, in _instrumented_requests_call
+    return call_wrapped()
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/instrumentation/requests/__init__.py", line 145, in call_wrapped
+    return wrapped_send(self, request, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/requests/adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=4001): Max retries exceeded with url: /api/v1/calc/mult/61/25 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8dd09d9c00>: Failed to establish a new connection: [Errno 111] Connection refused'))
+172.19.0.1 - - [06/Oct/2022 20:49:13] "GET /api/v1/frontend HTTP/1.1" 500 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:49:14.8201885+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {grpc_status:14, created_time:"2022-10-06T20:49:14.8201333+00:00"}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:49:17] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:49:19.818261537+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {grpc_status:14, created_time:"2022-10-06T20:49:19.818248706+00:00"}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:49:22] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:49:24.81896773+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {created_time:"2022-10-06T20:49:24.81894996+00:00", grpc_status:14}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:49:27] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:49:29.81791+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {grpc_status:14, created_time:"2022-10-06T20:49:29.8179047+00:00"}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:49:32] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:49:34.818091+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {created_time:"2022-10-06T20:49:34.8180855+00:00", grpc_status:14}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:49:37] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:49:39.8191818+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {created_time:"2022-10-06T20:49:39.8191508+00:00", grpc_status:14}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:49:42] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:49:44.818912402+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {grpc_status:14, created_time:"2022-10-06T20:49:44.8189043+00:00"}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:49:47] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:49:49.818793422+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {created_time:"2022-10-06T20:49:49.818786829+00:00", grpc_status:14}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:49:52] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:49:54.82244+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {grpc_status:14, created_time:"2022-10-06T20:49:54.8224217+00:00"}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:49:57] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting metrics, retrying in Nones.
+Exception while exporting metrics 'NoneType' object cannot be interpreted as an integer
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:49:59.824735454+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {grpc_status:14, created_time:"2022-10-06T20:49:59.824719902+00:00"}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/metrics/_internal/export/__init__.py", line 482, in _receive_metrics
+    self._exporter.export(metrics_data, timeout_millis=timeout_millis)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/metric_exporter/__init__.py", line 248, in export
+    return self._export(metrics_data)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:49:59.820938085+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {grpc_status:14, created_time:"2022-10-06T20:49:59.820919491+00:00"}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:50:02] "GET /metrics HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces, retrying in Nones.
+Exception while exporting Span batch.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 305, in _export
+    self._client.Export(
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/usr/local/lib/python3.10/dist-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+status = StatusCode.UNAVAILABLE
+details = "failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused"
+debug_error_string = "UNKNOWN:Failed to pick subchannel {created_time:"2022-10-06T20:50:04.8212439+00:00", children:[UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: Failed to connect to remote host: Connection refused {grpc_status:14, created_time:"2022-10-06T20:50:04.8212254+00:00"}]}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/sdk/trace/export/__init__.py", line 367, in _export_batch
+    self.span_exporter.export(self.spans_list[:idx])  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/trace_exporter/__init__.py", line 291, in export
+    return self._export(spans)
+  File "/usr/local/lib/python3.10/dist-packages/opentelemetry/exporter/otlp/proto/grpc/exporter.py", line 345, in _export
+    sleep(delay)
+TypeError: 'NoneType' object cannot be interpreted as an integer
+172.19.0.1 - - [06/Oct/2022 20:50:07] "GET /metrics HTTP/1.1" 200 -

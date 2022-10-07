@@ -8,7 +8,7 @@ metrics = PrometheusMetrics(app)
 metrics.info('app_info', 'Application info', version='1.0.0', app_name='frontend')
 
 operations = ['sum', 'sub', 'mult', 'div']
-ports = {'v1': 'http://backend_fast:4001', 'v2': 'http://backend_medim:4002', 'v3': 'http://backend_slow:4003'}
+ports = {'v1': 'http://backend_fast:4001', 'v2': 'http://backend_medium:4002', 'v3': 'http://backend_slow:4003'}
  
 
 @app.route('/api/v1/frontend', methods=['GET'])

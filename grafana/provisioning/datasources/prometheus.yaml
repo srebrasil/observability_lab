@@ -9,3 +9,11 @@ datasources:
   isDefault: true
   version: 1
   editable: false
+- name: jaeger
+  type: jaeger
+  access: proxy
+  orgId: 1
+  url: http://jaeger:16686
+  isDefault: false
+  version: 1
+  editable: false

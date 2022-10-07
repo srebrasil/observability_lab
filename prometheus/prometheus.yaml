@@ -21,4 +21,4 @@ scrape_configs:
   - job_name: applications
     scrape_interval: 5s
     static_configs:
-      - targets: ["192.168.15.9:4000", "192.168.15.9:4001", "192.168.15.9:4002", "192.168.15.9:4003"]
+      - targets: ["frontend:4000", "backend_fast:4001", "backend_medium:4002", "backend_slow:4003"]

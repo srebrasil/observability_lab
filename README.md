@@ -1,1 +1,1 @@
-Sandbox for Github Copilot
+Observability Lab

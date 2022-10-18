@@ -4,13 +4,14 @@ services:
     profiles:
       - backend
       - all
+      - grafana
     image: grafana/grafana
     container_name: grafana
     restart: always
     ports:
       - 3000:3000
     volumes:
-      - ./docker-volumes/grafana:/var/lib/grafana
+      - grafana-data:/var/lib/grafana
       - ./grafana/dashboard:/var/lib/grafana/dashboards
       - ./grafana/provisioning:/etc/grafana/provisioning
     networks:
@@ -19,29 +20,33 @@ services:
       - prometheus
 
   prometheus:
-    profiles:
+      image: prom/prometheus:latest
+      container_name: prometheus
+      profiles:
       - backend
       - all
-    image: prom/prometheus:latest
-    container_name: prometheus
-    ports:
-      - 9090:9090
-    volumes:
-      - ./prometheus:/etc/prometheus
-      - ./docker-volumes/prometheus:/prometheus
-    networks:
-      - prometheus-net
-    command: --web.enable-lifecycle  --config.file=/etc/prometheus/prometheus.yaml
+      - prometheus
+      volumes:
+        - ./prometheus/:/etc/prometheus/
+        - prometheus-data:/prometheus
+      command: --web.enable-lifecycle  --config.file=/etc/prometheus/prometheus.yaml
+      ports:
+        - 9090:9090
+      networks:
+       - prometheus-net
 
   jaeger:
     profiles:
       - backend
       - all
+      - jaeger
     image: jaegertracing/all-in-one:latest
     container_name: jaeger
     environment:
-      COLLECTOR_ZIPKIN_HTTP_PORT: 9411
-      COLLECTOR_OTLP_ENABLE: True
+      - COLLECTOR_ZIPKIN_HTTP_PORT=9411
+      - COLLECTOR_OTLP_ENABLE=True
+      - METRICS_STORAGE_TYPE=prometheus
+      - PROMETHEUS_SERVER_URL=http://prometheus:9090
     ports:
       - 6831:6831/udp
       - 6832:6832/udp
@@ -63,7 +68,7 @@ services:
       - 16686
       - 16685
     volumes:
-      - ./docker-volumes/jaeger:/var/lib/jaeger
+      - jaeger-data:/var/lib/jaeger
     networks:
       - jaeger-net
     depends_on:
@@ -73,6 +78,7 @@ services:
     profiles:
       - backend
       - all
+      - otel
     image: otel/opentelemetry-collector:latest
     container_name: otel-collector
     ports:
@@ -206,7 +212,9 @@ networks:
   apps-net:
     name: olly
 
+
 volumes:
-  grafana-data:
-  prometheus-data: 
+  grafana-data: {}
+  prometheus-data: {}
+  jaeger-data: {}
 

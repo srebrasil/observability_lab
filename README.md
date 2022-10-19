@@ -49,8 +49,8 @@ password: admin
 
 <h2>Contribuições de:
 <br>
-<a href = "https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo = GitHub_username/repository_name"/>
+<a href="https://github.com/angular/angular-ja/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=angular/angular-ja" />
 </a>
 
 </div>

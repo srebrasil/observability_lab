@@ -1,7 +1,9 @@
 <div align="center">
 
 ![image](https://user-images.githubusercontent.com/75628046/196457254-08f40047-2a69-49b6-bb61-a7203645c9a0.png) 
-<h1>Observability Lab 
+</div>
+<div align="center">
+  <p><h1>Observability Lab</p> 
 <p align="center"> 📊 Lab com conceitos simples de observabilidade</p>
 
 <h2> 🛠 Rodar a aplicação
@@ -47,11 +49,13 @@ password: admin
 
 <br>
 
-<h2>Autor
-<br>
-<a><img style="border-radius: 40%;"src="https://user-images.githubusercontent.com/75628046/196470758-b66cdb31-f044-4fc6-a781-d8b0d2a82813.png"width="100px;" alt=""/>
-<br>
-Ricardo Coelho 
-<br>
-<a href="https://br.linkedin.com/in/rcsousa1" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+  <h2>Contribuições de:</h2>
+<div>
+<a href="https://github.com/srebrasil/observability_lab/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=srebrasil/observability_lab" />
+</a>
+  </div>
+
+Lista de contribuições montada por [contrib.rocks](https://contrib.rocks).
+
 </div>

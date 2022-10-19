@@ -48,9 +48,11 @@ password: admin
 <br>
 
 <h2>Contribuições de:
-<br>
+<div>
 <a href="https://github.com/srebrasil/observability_lab/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=angular/angular-ja" />
+  <img src="https://contrib.rocks/image?repo=srebrasil/observability_lab" />
 </a>
+
+Lista de contribuições montada por [contrib.rocks](https://contrib.rocks).
 
 </div>

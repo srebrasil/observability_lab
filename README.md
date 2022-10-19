@@ -49,7 +49,7 @@ password: admin
 
 <h2>Contribuições de:
 <br>
-<a href="https://github.com/angular/angular-ja/graphs/contributors">
+<a href="https://github.com/srebrasil/observability_lab/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=angular/angular-ja" />
 </a>
 

@@ -1,7 +1,7 @@
 <div align="center">
 
 ![image](https://user-images.githubusercontent.com/75628046/196457254-08f40047-2a69-49b6-bb61-a7203645c9a0.png) 
-<h1>Observability Lab 
+  <p><h1>Observability Lab</p> 
 <p align="center"> 📊 Lab com conceitos simples de observabilidade</p>
 
 <h2> 🛠 Rodar a aplicação
@@ -52,6 +52,7 @@ password: admin
 <a href="https://github.com/srebrasil/observability_lab/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=srebrasil/observability_lab" />
 </a>
+  </div>
 
 Lista de contribuições montada por [contrib.rocks](https://contrib.rocks).
 

@@ -47,11 +47,10 @@ password: admin
 
 <br>
 
-<h2>Autor
+<h2>Contribuições de:
 <br>
-<a><img style="border-radius: 40%;"src="https://user-images.githubusercontent.com/75628046/196470758-b66cdb31-f044-4fc6-a781-d8b0d2a82813.png"width="100px;" alt=""/>
-<br>
-Ricardo Coelho 
-<br>
-<a href="https://br.linkedin.com/in/rcsousa1" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+<a href = "https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo = GitHub_username/repository_name"/>
+</a>
+
 </div>

@@ -15,8 +15,11 @@ $ git clone <https://github.com/srebrasil/observability_lab.git>
 # Acesse a pasta no terminal/cmd
 $ cd observability_lab
 
+# Assumindo que o docker já está instalado, instale o plugin para o Loki
+$ docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all-permissions
+
 # Execute a aplicação
-$ docker compose --profile all up
+$ docker-compose --profile all up
 
 # Os endereços das aplicações no próximo tópico 
 ```
@@ -45,7 +48,7 @@ password: admin
 
 <h2> 🛠 Tecnologias
 
-[Docker](https://www.docker.com/) | [Prometheus](https://prometheus.io/) | [Jaeger](https://www.jaegertracing.io/) | [Python](https://www.python.org/) | [Grafana](https://grafana.com/) | [OpenTelemetry](https://opentelemetry.io/)
+[Docker](https://www.docker.com/) | [Prometheus](https://prometheus.io/) | [Jaeger](https://www.jaegertracing.io/) | [Python](https://www.python.org/) | [Grafana](https://grafana.com/) | [OpenTelemetry](https://opentelemetry.io/) | [Loki](https://grafana.com/oss/loki/)
 
 <br>
 

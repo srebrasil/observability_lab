@@ -1,6 +1,13 @@
-version: '3.3'
+version: '3.4'
+x-logging: &logging
+  logging:
+    driver: loki
+    options:
+      loki-url: "http://host.docker.internal:3100/loki/api/v1/push"
+
 services:
   grafana:
+    <<: *logging
     profiles:
       - backend
       - all
@@ -20,22 +27,24 @@ services:
       - prometheus
 
   prometheus:
-      image: prom/prometheus:latest
-      container_name: prometheus
-      profiles:
-      - backend
-      - all
-      - prometheus
-      volumes:
-        - ./prometheus/:/etc/prometheus/
-        - prometheus-data:/prometheus
-      command: --web.enable-lifecycle  --config.file=/etc/prometheus/prometheus.yaml
-      ports:
-        - 9090:9090
-      networks:
-       - prometheus-net
-
+    <<: *logging
+    image: prom/prometheus:latest
+    container_name: prometheus
+    profiles:
+    - backend
+    - all
+    - prometheus
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+      - prometheus-data:/prometheus
+    command: --web.enable-lifecycle  --config.file=/etc/prometheus/prometheus.yaml
+    ports:
+      - 9090:9090
+    networks:
+     - prometheus-net
+  
   jaeger:
+    <<: *logging
     profiles:
       - backend
       - all
@@ -75,6 +84,7 @@ services:
       - prometheus
 
   otel-collector:
+    <<: *logging
     profiles:
       - backend
       - all
@@ -102,9 +112,29 @@ services:
     command: --config=/etc/otel-collector/config.yaml
     depends_on:
       - jaeger
+      - loki
+      
+  loki:
+    profiles:
+      - backend
+      - all
+      - loki
+    container_name: loki
+    image: grafana/loki:latest
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/config/local-config.yaml
+    volumes:
+      - loki-data:/etc/loki
+      - ./docker-volumes/loki:/etc/loki/config
+    networks:
+      - loki-net
+    depends_on:
+      - prometheus
 
 
   frontend:
+    <<: *logging
     profiles:
       - frontend
       - all
@@ -112,6 +142,8 @@ services:
     container_name: frontend
     environment:
       OTEL_RESOURCE_ATTRIBUTES: "service.name=frontend"
+      OTEL_PYTHON_LOG_CORRELATION: "true"
+      OTEL_PYTHON_LOG_LEVEL: "WARNING"
     ports:
       - 4000:4000
     volumes:
@@ -129,6 +161,7 @@ services:
       - jaeger
 
   backend-fast:
+    <<: *logging
     profiles:
       - frontend
       - all
@@ -136,6 +169,8 @@ services:
     container_name: backend_fast
     environment:
       OTEL_RESOURCE_ATTRIBUTES: "service.name=backend-fast"
+      OTEL_PYTHON_LOG_CORRELATION: "true"
+      OTEL_PYTHON_LOG_LEVEL: "WARNING"
     ports:
       - 4001:4001
     volumes:
@@ -153,6 +188,7 @@ services:
       - jaeger
 
   backend_medium:
+    <<: *logging
     profiles:
       - frontend
       - all
@@ -160,6 +196,8 @@ services:
     container_name: backend_medium
     environment:
       OTEL_RESOURCE_ATTRIBUTES: "service.name=backend_medium"
+      OTEL_PYTHON_LOG_CORRELATION: "true"
+      OTEL_PYTHON_LOG_LEVEL: "WARNING"
     ports:
       - 4002:4002
     volumes:
@@ -177,6 +215,7 @@ services:
       - jaeger
 
   backend_slow:
+    <<: *logging
     profiles:
       - frontend
       - all
@@ -184,6 +223,8 @@ services:
     container_name: backend_slow
     environment:
       OTEL_RESOURCE_ATTRIBUTES: "service.name=backend_slow"
+      OTEL_PYTHON_LOG_CORRELATION: "true"
+      OTEL_PYTHON_LOG_LEVEL: "WARNING"
     ports:
       - 4003:4003
     volumes:
@@ -211,10 +252,13 @@ networks:
     name: olly
   apps-net:
     name: olly
+  loki-net:
+    name: olly
 
 
 volumes:
   grafana-data: {}
   prometheus-data: {}
   jaeger-data: {}
+  loki-data: {}
 

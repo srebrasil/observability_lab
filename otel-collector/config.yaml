@@ -18,8 +18,10 @@ exporters:
     endpoint: jaeger:14250
     tls:
       insecure: true
+
   logging:
-    loglevel: debug
+    LogLevel: debug
+  
   
     # Data sources: metrics
   prometheus:
@@ -39,14 +41,15 @@ exporters:
 processors:
   batch:
 
+
 service:
   pipelines:
     traces:
       receivers: [otlp]
-      exporters: [logging, jaeger]
+      exporters: [jaeger]
       processors: []
     
     metrics:
       receivers: [otlp, prometheus]
-      processors: [batch]
+      processors: []
       exporters: [logging]

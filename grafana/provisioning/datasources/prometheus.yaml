@@ -9,6 +9,7 @@ datasources:
   isDefault: true
   version: 1
   editable: false
+  uid: 1
 - name: jaeger
   type: jaeger
   access: proxy
@@ -17,3 +18,16 @@ datasources:
   isDefault: false
   version: 1
   editable: false
+  uid: 2
+- name: Loki
+  type: loki
+  access: proxy
+  url: http://loki:3100
+  basicAuth: false
+  jsonData:
+    maxLines: 1000
+    derivedFields:
+      - datasourceUid: 2
+      - matcherRegex: "traceID=(\\w+)"
+        name: TraceID
+        url: 'http://jaeger:16686/trace/$${__value.raw}'
